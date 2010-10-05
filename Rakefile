@@ -22,6 +22,7 @@ begin
     gemspec.email = "dwilkie@gmail.com"
     gemspec.homepage = "http://github.com/dwilkie/devise_paypal"
     gemspec.authors = ["David Wilkie"]
+    gemspec.add_runtime_dependency "devise"
     gemspec.add_runtime_dependency "paypal-ipn"
   end
 rescue LoadError
