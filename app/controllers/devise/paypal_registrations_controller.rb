@@ -5,6 +5,7 @@ class Devise::PaypalRegistrationsController < ApplicationController
 
   # GET /resource/paypal_sign_up
   def new
+    debugger
     redirect_to set_paypal_permissions_url
   end
 end
