@@ -1,7 +1,12 @@
-module Devise
-  module Paypal
+module DevisePaypal
+  module Controllers
     module InternalHelpers
       protected
+        # The callback redirect uri. Used to request the access token.
+        def paypal_permissions_authable_callback_uri #:nodoc:
+          paypal_permissions_authable_callback_url(resource_name)
+        end
+
         def callback_action
           self.resource = resource_class.find_from_paypal_permissions(params[:token], signed_in_resource)
 

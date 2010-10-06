@@ -11,7 +11,8 @@ Devise.add_module :paypal_permissions_authable,
                   :model => 'devise_paypal/models/paypal_permissions_authable',
                   :route => { :paypal_permissions_authable => [nil, :new] }
 
-require "devise_paypal/paypal/internal_helpers"
 require 'devise_paypal/rails/routes'
 require 'devise_paypal/rails'
+require 'devise_paypal/controllers/url_helpers'
+require 'devise_paypal/controllers/internal_helpers'
 
