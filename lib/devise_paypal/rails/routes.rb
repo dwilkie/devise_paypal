@@ -14,7 +14,7 @@ module ActionDispatch::Routing
 
         get "/paypal_authable/callback",
           :to => controllers[:paypal_authable],
-          :action => :callback,
+          :action => :callback_action,
           :as => :paypal_authable_callback
       end
 
@@ -31,7 +31,7 @@ module ActionDispatch::Routing
 
         get "/paypal_permissions_authable/callback",
           :to => controllers[:paypal_permissions_authable],
-          :action => :callback,
+          :action => :callback_action,
           :as => :paypal_permissions_authable_callback
       end
   end
