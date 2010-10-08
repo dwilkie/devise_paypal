@@ -1,0 +1,7 @@
+en:
+  devise:
+    paypal_permissions_authable:
+      success: "Signed in successfully from Paypal account."
+    paypal_authable:
+      success: "Signed in successfully from Paypal account."
+

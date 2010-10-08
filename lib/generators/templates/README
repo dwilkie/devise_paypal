@@ -1,0 +1,20 @@
+
+===============================================================================
+
+Some setup you must do manually if you haven't already:
+
+  1. Add the paypal-ipn gem to your Gemfile
+
+       gem 'paypal-ipn', :require => 'paypal'
+
+     This is a required to communicate with paypal
+
+  2. Generate a paypal initializer
+
+       rails g paypal:initializer
+
+  3. Edit config/initializers/paypal.rb and configure your api details
+     For more info see: http://github.com/dwilkie/paypal
+
+===============================================================================
+

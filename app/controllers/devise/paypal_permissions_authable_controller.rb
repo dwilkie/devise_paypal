@@ -13,7 +13,7 @@ class Devise::PaypalPermissionsAuthableController < ApplicationController
 
   # GET /resource/paypal_permissions_authable/callback
   def callback_action
-    paypal_user_details = get_paypal_permissions(params[:token])
+    paypal_user_details = get_paypal_permissions(params[:token]) if params[:token]
     handle_callback_action(paypal_user_details)
   end
 
