@@ -8,7 +8,7 @@ class Devise::PaypalPermissionsAuthableController < ApplicationController
   def new
     @permissions ||= {}
     callback_url = paypal_permissions_authable_callback_uri
-    redirect_to setup_paypal_permissions_url(callback_url, @permissions)
+    redirect_to set_paypal_permissions_url(callback_url, @permissions)
   end
 
   # GET /resource/paypal_permissions_authable/callback
