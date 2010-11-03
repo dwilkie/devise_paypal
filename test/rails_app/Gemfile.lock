@@ -39,6 +39,7 @@ GEM
       activemodel (= 3.0.0)
       activesupport (= 3.0.0)
     activesupport (3.0.0)
+    archive-tar-minitar (0.5.2)
     arel (1.0.1)
       activesupport (~> 3.0.0)
     bcrypt-ruby (2.1.2)
@@ -52,6 +53,7 @@ GEM
       selenium-webdriver (>= 0.0.3)
     childprocess (0.0.7)
       ffi (~> 0.6.3)
+    columnize (0.3.1)
     crack (0.1.8)
     cucumber (0.8.5)
       builder (~> 2.1.2)
@@ -77,6 +79,8 @@ GEM
       crack (= 0.1.8)
     i18n (0.4.1)
     json_pure (1.4.6)
+    linecache19 (0.5.11)
+      ruby_core_source (>= 0.1.4)
     mail (2.2.7)
       activesupport (>= 2.3.6)
       mime-types
@@ -118,6 +122,16 @@ GEM
     rspec-mocks (2.0.0.rc)
       rspec-core (= 2.0.0.rc)
       rspec-expectations (= 2.0.0.rc)
+    ruby-debug-base19 (0.11.24)
+      columnize (>= 0.3.1)
+      linecache19 (>= 0.5.11)
+      ruby_core_source (>= 0.1.4)
+    ruby-debug19 (0.11.6)
+      columnize (>= 0.3.1)
+      linecache19 (>= 0.5.11)
+      ruby-debug-base19 (>= 0.11.19)
+    ruby_core_source (0.1.4)
+      archive-tar-minitar (>= 0.5.2)
     rubyzip (0.9.4)
     selenium-webdriver (0.0.29)
       childprocess (>= 0.0.7)
@@ -147,4 +161,5 @@ DEPENDENCIES
   paypal-ipn!
   pickle
   rails (= 3.0.0)
+  ruby-debug19
   sqlite3-ruby

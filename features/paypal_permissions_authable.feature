@@ -1,7 +1,7 @@
 Feature: Authenticate using Paypal Permissions Authable
-  In order to avoid filling out forms when signing up or logging in
+  In order to signup or login using Paypal and grant requested permissions
   As a user
-  I want to be able to authenticate using paypal's permissions api
+  I want to be able to authenticate using the Paypal permissions api
 
   Scenario: I authenticate with paypal permissions authable
     Given I want to authenticate with paypal
@@ -10,7 +10,6 @@ Feature: Authenticate using Paypal Permissions Authable
 
     Then I should be redirected to sign in with paypal
 
-  @current
   Scenario: I grant the required permissions
     Given I have a paypal account with email: "mara@example.com"
     And I sign into paypal and grant the required permissions
@@ -21,6 +20,7 @@ Feature: Authenticate using Paypal Permissions Authable
     And I should be on the home page
     And I should see "Signed in successfully from Paypal account."
 
+  @current
   Scenario: I do not grant the required permissions
     Given I have a paypal account with email: "mara@example.com"
     And I sign into paypal but do not grant the required permissions
