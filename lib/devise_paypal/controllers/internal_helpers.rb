@@ -21,12 +21,9 @@ module DevisePaypal
         #     devise:
         #       paypal_permissions_authable:
         #         success: 'Successfully authorized from Paypal account'
-        #         failure: 'Could not authorize you from Paypal because "%{reason}".'
-        #         skipped: 'Skipped authorization for Paypal.'
+        #
         #       paypal_authable:
         #         success: 'Successfully authorized from Paypal account.'
-        #         failure: 'Could not authorize you from Paypal because "%{reason}".'
-        #         skipped: 'Skipped authorization for Paypal.'
         #
         # But they can also be nested by Devise scope:
         #

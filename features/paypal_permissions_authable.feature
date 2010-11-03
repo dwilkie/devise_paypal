@@ -18,9 +18,8 @@ Feature: Authenticate using Paypal Permissions Authable
 
     Then a user should exist with email: "mara@example.com"
     And I should be on the home page
-    And I should see "Signed in successfully from Paypal account."
+    And I should see "Successfully authorized from Paypal account."
 
-  @current
   Scenario: I do not grant the required permissions
     Given I have a paypal account with email: "mara@example.com"
     And I sign into paypal but do not grant the required permissions
@@ -28,8 +27,6 @@ Feature: Authenticate using Paypal Permissions Authable
     When I am redirected back to the application from paypal
 
     Then a user should not exist with email: "mara@example.com"
-    And I should be on the home page
-    And I should see "Unable to"
 
   Scenario: I do not sign into paypal
     Given I do not sign into paypal
