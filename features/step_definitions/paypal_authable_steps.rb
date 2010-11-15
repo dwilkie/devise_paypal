@@ -4,7 +4,7 @@ end
 
 Then /^I should be requested to grant access to my name and email address$/ do
   Then %{I should have the following query string:}, table(%{
-    | _cmd  | _account-authenticate-login |
+    | cmd  | _account-authenticate-login  |
     | token | HA-DJW3X5Y99KRR4            |
   })
 end

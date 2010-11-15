@@ -15,7 +15,7 @@ end
 
 Then /^I should be requested to grant the required permissions$/ do
   Then %{I should have the following query string:}, table(%{
-    | _cmd  | _access-permission-login |
+    | cmd  | _access-permission-login  |
     | token | HA-DJW3X5Y99KRR4         |
   })
 end

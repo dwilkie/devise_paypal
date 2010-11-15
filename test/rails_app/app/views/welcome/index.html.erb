@@ -1,0 +1,11 @@
+<% if user_signed_in? %>
+  Welcome <%= current_user.email %>
+  <br/>
+  <%= link_to "Logout", destroy_user_session_path %>
+<% else %>
+  <%= link_to "Login or Signup through Paypal Authable", new_user_paypal_authable_path %>
+  <br/>
+  <br/>
+  <%= link_to "Login or Signup through Paypal Permissions Authable", new_user_paypal_permissions_authable_path %>
+<% end %>
+
