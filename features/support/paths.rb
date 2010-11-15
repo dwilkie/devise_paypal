@@ -14,8 +14,14 @@ module NavigationHelpers
     when /^the authenticate with paypal permissions page$/
       new_user_paypal_permissions_authable_path
 
+    when /^the authenticate with paypal authable page$/
+      new_user_paypal_authable_path
+
     when /^the paypal permissions callback page$/
       user_paypal_permissions_authable_callback_path(:token => @token)
+
+    when /^the paypal authable callback page$/
+      user_paypal_authable_callback_path(:token => @token)
 
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
