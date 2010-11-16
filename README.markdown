@@ -1,6 +1,6 @@
 # devise_paypal
 
-devise_paypal is [Devise](http://github.com/plataformatec/devise) extension that allows you to authenticate users using the the Paypal Permissions API or the Paypal Authentication API through Devise.
+devise_paypal is [Devise](http://github.com/plataformatec/devise) extension that allows you to authenticate users using the the [Paypal Permissions API](https://www.x.com/community/ppx/permissions) or the [Paypal Authentication API](https://www.x.com/community/ppx/authentication) through Devise.
 
 ## Installation
 
@@ -13,7 +13,7 @@ Ensure your bundle is installed and run the generator
     bundle
     rails g devise_paypal:install
 
-As the generator instructs, you need to also add paypal-ipn to your gemfile then run it's generator
+As the generator instructs, you need to also add paypal-ipn to your gemfile then run its generator
 
     gem 'paypal-ipn', :require => 'paypal' #, :git => "git://github.com/dwilkie/paypal.git" # for the latest and greatest
 
@@ -36,7 +36,7 @@ Using the `devise` method, add `:paypal_authable` and/or `:paypal_permissions_au
 
 ### Views
 
-If you have chosen a model named User and "devise_for :users" is already added to your config/routes.rb, devise_paypal will create the following url methods:
+If you have chosen a model named User and `devise_for :users` is already added to your config/routes.rb, devise_paypal will create the following url methods:
 
     new_user_paypal_authable
     new_user_paypal_permissions_authable
@@ -46,7 +46,7 @@ Then you only need to add them to your layouts in order to provide Paypal authen
     <%= link_to "Sign in with Paypal Authable", new_user_paypal_authable_path %>
     <%= link_to "Sign in with Paypal Permissions Authable", new_user_paypal_permissions_authable_path %>
 
-By clicking on these links, the user will be redirected to Paypal. Then after entering their credentials, they will be redirected back to your application.
+By clicking on these links, the user will be redirected to Paypal. Then after entering their credentials, they'll be redirected back to your application.
 
 ### Model Callback Method
 
@@ -59,7 +59,7 @@ Implement a class method in your model called `find_for_paypal_auth` which accep
       :mass_pay => true
     }
 
-The method should return a single record which will be used to sign in the user. A simple implementation may look like:
+The method should return a single record which will be used to sign in the user. A simple implementation may look like this:
 
     class User < ActiveRecord::Base
       def self.find_for_paypal_auth(params)
@@ -82,7 +82,7 @@ See [user.rb](https://github.com/dwilkie/devise_paypal/blob/master/test/rails_ap
 
 ### Overriding Defaults
 
-Say you want to request permission to access a Paypal API on behalf of a user. You can do this in devise_paypal by overriding the devise_for call in your routes.rb file.
+Say you want to request permission to access a Paypal API on behalf of a user. You can do this by overriding the devise_for call in your routes.rb file.
 
     # routes.rb
     devise_for :users, :controllers => {
@@ -118,6 +118,8 @@ To change this behavior simply override `render_for_paypal` in your controller
         render "welcome#index"
       end
     end
+
+For more details check out the [source](https://github.com/dwilkie/devise_paypal/tree/master/lib/devise_paypal/)
 
 Copyright (c) 2010 David Wilkie, released under the MIT license
 
