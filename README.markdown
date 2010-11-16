@@ -1,6 +1,6 @@
 # devise_paypal
 
-devise_paypal is [Devise](http://github.com/dwilkie/devise_paypal) extension that allows you to authenticate using the the Paypal Permissions API or the Paypal Authentication API through devise.
+devise_paypal is [Devise](http://github.com/dwilkie/devise_paypal) extension that allows you to authenticate users using the the Paypal Permissions API or the Paypal Authentication API through devise.
 
 ## Installation
 
@@ -13,8 +13,8 @@ Add devise_paypal to your Gemfile and make sure your using devise from the git r
     gem "devise", :git => "git://github.com/plataformatec/devise.git" # "1.2.rc"
     gem "devise_paypal"
 
-Run the generator
-
+Ensure all your bundle is installed and run the generator
+    bundle install
     rails g devise_paypal:install
 
 As the generator instructs you need to also add paypal-ipn to your gemfile and run it's generator
@@ -24,13 +24,13 @@ As the generator instructs you need to also add paypal-ipn to your gemfile and r
 
 This will create a configuration file where you can put your paypal api credientials.
 
-Note: to enable the Paypal Permissions API you must file a ticket [here](https://www.paypal.com/mts). See the this [document](https://www.x.com/community/ppx/permissions) for further details.
+Note: to enable the Paypal Permissions API you must file a ticket [here](https://www.paypal.com/mts). See this [page](https://www.x.com/community/ppx/permissions) for further details.
 
 ## Usage
 
 ### Model Configuration
 
-Using the `devise` method add the `paypal_authable` and/or `paypal_permissions_authable` to your model.
+Using the `devise` method, add the `paypal_authable` and/or `paypal_permissions_authable` to your model.
 
     class User < ActiveRecord::Base
       devise paypal_authable, :paypal_permissions_authable
