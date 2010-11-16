@@ -13,7 +13,7 @@ Add devise_paypal to your Gemfile and make sure your using devise from the git r
     gem "devise", :git => "git://github.com/plataformatec/devise.git" # "1.2.rc"
     gem "devise_paypal"
 
-Ensure all your bundle is installed and run the generator
+Ensure your bundle is installed and run the generator
     bundle install
     rails g devise_paypal:install
 
@@ -69,6 +69,8 @@ The method should return a single record which will be used to sign in the user.
 See [user.rb](https://github.com/dwilkie/devise_paypal/blob/master/test/rails_app/app/models/user.rb) in the [sample rails app](https://github.com/dwilkie/devise_paypal/tree/master/test/rails_app) for more details.
 
 ### Overriding Defaults
+
+
 
 Copyright (c) 2010 David Wilkie, released under the MIT license
 

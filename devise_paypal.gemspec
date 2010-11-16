@@ -13,7 +13,7 @@ Gem::Specification.new do |s|
   s.description = %q{Signup or login using Paypal's Authorization or Permissions api's}
 
   s.rubyforge_project = "devise_paypal"
-  s.add_runtime_dependency "paypal-ipn"
+  s.add_runtime_dependency "paypal-ipn", > "0.0.1"
 
   s.files         = `git ls-files`.split("\n")
   s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
