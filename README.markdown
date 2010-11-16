@@ -121,5 +121,19 @@ To change this behavior simply override `render_for_paypal` in your controller
 
 For more details check out the [source](https://github.com/dwilkie/devise_paypal/tree/master/lib/devise_paypal/)
 
+## Trying Things Out
+
+The gem comes with  [sample rails app](https://github.com/dwilkie/devise_paypal/tree/master/test/rails_app) so you can try things out in your browser. To start it:
+
+    git clone git://github.com/dwilkie/devise_paypal.git
+    cd devise_paypal/test/rails_app
+    bundle
+    rake db:migrate
+    rails s
+
+Then go to [http://localhost:3000](http://localhost:3000). Remember to replace the values in config/initializers/paypal.rb with your Paypal API credentials.
+
+
+
 Copyright (c) 2010 David Wilkie, released under the MIT license
 
