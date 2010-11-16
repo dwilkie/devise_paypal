@@ -1,25 +1,23 @@
 # devise_paypal
 
-devise_paypal is [Devise](http://github.com/dwilkie/devise_paypal) extension that allows you to authenticate users using the the Paypal Permissions API or the Paypal Authentication API through devise.
+devise_paypal is [Devise](http://github.com/dwilkie/devise_paypal) extension that allows you to authenticate users using the the Paypal Permissions API or the Paypal Authentication API through Devise.
 
 ## Installation
-
-Install devise_paypal and it's dependencies
-
-    gem install devise_paypal
 
 Add devise_paypal to your Gemfile and make sure your using devise from the git repository or at least version: "1.2.rc"
 
     gem "devise", :git => "git://github.com/plataformatec/devise.git" # "1.2.rc"
-    gem "devise_paypal"
+    gem "devise_paypal" #, :git => "git://github.com/dwilkie/devise_paypal.git" # for the latest and greatest
 
 Ensure your bundle is installed and run the generator
     bundle install
     rails g devise_paypal:install
 
-As the generator instructs you need to also add paypal-ipn to your gemfile and run it's generator
+As the generator instructs, you need to also add paypal-ipn to your gemfile then run it's generator
 
-    gem 'paypal-ipn', :require => 'paypal'
+    gem 'paypal-ipn', :require => 'paypal' #, :git => "git://github.com/dwilkie/paypal.git" # for the latest and greatest
+
+    bundle install
     rails g paypal:initializer
 
 This will create a configuration file where you can put your paypal api credientials.
