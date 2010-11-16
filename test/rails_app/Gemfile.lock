@@ -7,7 +7,7 @@ PATH
   remote: /home/dave/work/plugins/paypal
   specs:
     paypal-ipn (0.0.1)
-      httparty (>= 0.6.1)
+      httparty
 
 GEM
   remote: http://rubygems.org/

@@ -8,8 +8,8 @@ gem 'rails', '3.0.1'
 gem 'sqlite3-ruby', :require => 'sqlite3'
 
 gem 'devise', "1.2.rc"
-gem 'devise_paypal', :path => '/home/dave/work/plugins/devise_paypal'
-gem 'paypal-ipn', :require => 'paypal', :path => '/home/dave/work/plugins/paypal'
+gem 'devise_paypal', :git => 'git://github.com/dwilkie/devise_paypal.git'
+gem 'paypal-ipn', :require => 'paypal', :git => 'git://github.com/dwilkie/paypal.git'
 
 group :test do
   gem 'cucumber-rails'
