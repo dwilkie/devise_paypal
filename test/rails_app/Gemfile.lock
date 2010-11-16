@@ -1,12 +1,15 @@
-PATH
-  remote: /home/dave/work/plugins/devise_paypal
+GIT
+  remote: git://github.com/dwilkie/devise_paypal.git
+  revision: d28604a7c336ac6fdeec553636132dc0aea41741
   specs:
     devise_paypal (0.0.1)
+      paypal-ipn (> 0.0.1)
 
-PATH
-  remote: /home/dave/work/plugins/paypal
+GIT
+  remote: git://github.com/dwilkie/paypal.git
+  revision: 7ac86013bae9e07b9355e4754a930ddcbf1e5e2a
   specs:
-    paypal-ipn (0.0.1)
+    paypal-ipn (0.0.2)
       httparty
 
 GEM
