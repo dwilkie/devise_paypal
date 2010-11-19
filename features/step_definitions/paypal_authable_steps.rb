@@ -1,5 +1,5 @@
 Given /^I sign into paypal through paypal authable$/ do
-  register_get_user_details_response
+  register_get_user_details_response(@paypal_user_details)
 end
 
 Then /^I should be requested to grant access to my name and email address$/ do

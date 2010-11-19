@@ -3,7 +3,7 @@ Given /^I sign into paypal through paypal permissions authable$/ do
 end
 
 Given /^I grant the required permissions$/ do
-  register_get_user_details_response
+  register_get_user_details_response(@paypal_user_details)
 end
 
 Given /^I do not grant the required permissions$/ do

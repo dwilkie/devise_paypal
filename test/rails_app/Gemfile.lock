@@ -1,17 +1,3 @@
-GIT
-  remote: git://github.com/dwilkie/devise_paypal.git
-  revision: d28604a7c336ac6fdeec553636132dc0aea41741
-  specs:
-    devise_paypal (0.0.1)
-      paypal-ipn (> 0.0.1)
-
-GIT
-  remote: git://github.com/dwilkie/paypal.git
-  revision: 7ac86013bae9e07b9355e4754a930ddcbf1e5e2a
-  specs:
-    paypal-ipn (0.0.2)
-      httparty
-
 GEM
   remote: http://rubygems.org/
   specs:
@@ -70,6 +56,8 @@ GEM
     devise (1.2.rc)
       bcrypt-ruby (~> 2.1.2)
       warden (~> 1.0.0)
+    devise_paypal (0.0.1)
+      paypal-ipn (> 0.0.1)
     diff-lcs (1.1.2)
     erubis (2.6.6)
       abstract (>= 1.0.0)
@@ -91,6 +79,8 @@ GEM
       treetop (~> 1.4.8)
     mime-types (1.16)
     nokogiri (1.4.3.1)
+    paypal-ipn (0.0.2)
+      httparty
     pickle (0.4.2)
       cucumber (>= 0.8)
       rake
@@ -160,9 +150,9 @@ DEPENDENCIES
   capybara
   cucumber-rails
   devise (= 1.2.rc)
-  devise_paypal!
+  devise_paypal
   fakeweb
-  paypal-ipn!
+  paypal-ipn
   pickle
   rails (= 3.0.1)
   ruby-debug19
