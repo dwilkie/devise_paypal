@@ -1,5 +1,7 @@
 Given /^I sign into paypal through paypal authable$/ do
-  register_get_user_details_response(@paypal_user_details)
+  FakeWeb.register_uri(
+    :post, Paypal.nvp_uri, :body => get_user_details_response(@paypal_user_details)
+  )
 end
 
 When /^I am redirected back to the application from paypal after an authentication request$/ do

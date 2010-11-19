@@ -3,7 +3,9 @@ Given /^I sign into paypal through paypal permissions authable$/ do
 end
 
 Given /^I grant the required permissions$/ do
-  register_get_user_details_response(@paypal_user_details)
+  FakeWeb.register_uri(
+    :post, Paypal.nvp_uri, :body => get_user_details_response(@paypal_user_details)
+  )
 end
 
 Given /^I do not grant the required permissions$/ do
