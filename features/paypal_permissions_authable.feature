@@ -1,4 +1,4 @@
-@paypal_authentication_request
+@devise_paypal
 Feature: Authenticate using Paypal Permissions Authable
   In order to signup or login using Paypal and grant requested permissions
   As a user

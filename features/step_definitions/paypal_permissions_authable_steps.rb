@@ -13,6 +13,10 @@ Given /^I do not grant the required permissions$/ do
   )
 end
 
+When /^I am redirected back to the application from paypal after a permissions request$/ do
+  When "I go to the paypal permissions callback page"
+end
+
 Then /^I should be requested to grant the required permissions$/ do
   Then %{I should have the following query string:}, table(%{
     | cmd  | _access-permission-login  |

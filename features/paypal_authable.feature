@@ -1,4 +1,4 @@
-@paypal_authentication_request
+@devise_paypal
 Feature: Authenticate using Paypal Authable
   In order to signup or login using by logging into paypal
   As a user
