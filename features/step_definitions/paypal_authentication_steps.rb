@@ -1,10 +1,5 @@
 Given /^I have a paypal account(?: with #{capture_fields})?$/ do |fields|
   @paypal_user_details = parse_fields(fields)
-  parsed_paypal_user_details = {}
-  @paypal_user_details.each do |key, value|
-    parsed_paypal_user_details[key.classify.upcase] = value
-  end
-  @paypal_user_details = parsed_paypal_user_details
 end
 
 Given /^I do not sign into paypal$/ do
