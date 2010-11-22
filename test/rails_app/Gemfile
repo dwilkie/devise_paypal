@@ -8,7 +8,7 @@ gem 'rails', '3.0.1'
 gem 'sqlite3-ruby', :require => 'sqlite3'
 
 gem 'devise', "1.2.rc"
-gem 'devise_paypal'
+gem 'devise_paypal', :path => "/home/dave/work/plugins/devise_paypal"
 gem 'paypal-ipn'
 
 group :test do
@@ -16,6 +16,5 @@ group :test do
   gem 'capybara'
   gem 'pickle'
   gem 'fakeweb'
-  gem 'ruby-debug19'
 end
 

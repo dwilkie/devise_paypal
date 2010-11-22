@@ -10,7 +10,7 @@ Feature: Authenticate using Paypal Authable
     Then I should be redirected to sign in with paypal
     And I should be requested to grant access to my name and email address
 
-  Scenario: I sign into paypal
+  Scenario: I sign into Paypal
     Given I have a paypal account with email: "mara@example.com"
     And I sign into paypal through paypal authable
 
@@ -20,11 +20,12 @@ Feature: Authenticate using Paypal Authable
     And I should be on the home page
     And I should see "Successfully authorized from Paypal account."
 
-  Scenario: I do not sign into paypal
+  Scenario: I do not sign into Paypal
     Given I have a paypal account with email: "mara@example.com"
     But I do not sign into paypal
 
     When I am redirected back to the application from paypal after an authentication request
 
     Then a user should not exist with email: "mara@example.com"
+    And I should see "Unable to authorize you from Paypal account."
 

@@ -23,6 +23,9 @@ module NavigationHelpers
     when /^the paypal authable callback page$/
       user_paypal_authable_callback_path(:token => @token)
 
+    when /^the registration page$/
+      new_user_registration_path
+
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
     #

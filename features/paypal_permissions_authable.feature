@@ -29,6 +29,7 @@ Feature: Authenticate using Paypal Permissions Authable
     When I am redirected back to the application from paypal after a permissions request
 
     Then a user should not exist with email: "mara@example.com"
+    And I should see "Unable to authorize you from Paypal account."
 
   Scenario: I do not sign into paypal
     Given I have a paypal account with email: "mara@example.com"
@@ -37,4 +38,5 @@ Feature: Authenticate using Paypal Permissions Authable
     When I am redirected back to the application from paypal after a permissions request
 
     Then a user should not exist with email: "mara@example.com"
+    And I should see "Unable to authorize you from Paypal account."
 

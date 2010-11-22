@@ -1,7 +1,9 @@
 en:
   devise:
-    paypal_permissions_authable:
-      success: "Successfully authorized from Paypal account."
     paypal_authable:
       success: "Successfully authorized from Paypal account."
+      failure: "Unable to authorize you from Paypal account."
+    paypal_permissions_authable:
+      success: "Successfully authorized from Paypal account."
+      failure: "Unable to authorize you from Paypal account."
 

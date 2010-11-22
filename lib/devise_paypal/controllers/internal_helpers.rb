@@ -4,11 +4,11 @@ module DevisePaypal
       private
         def handle_callback_action(resource_params)
           self.resource = resource_class.find_for_paypal_auth(resource_params)
-
           if resource.persisted? && resource.errors.empty?
             set_paypal_flash_message :notice, :success, :resource => resource
             sign_in_and_redirect resource_name, resource, :event => :authentication
           else
+            set_paypal_flash_message :notice, :failure, :resource => resource
             clean_up_passwords(resource)
             render_for_paypal
           end
@@ -19,22 +19,26 @@ module DevisePaypal
         #
         #   en:
         #     devise:
-        #       paypal_permissions_authable:
-        #         success: 'Successfully authorized from Paypal account'
-        #
         #       paypal_authable:
         #         success: 'Successfully authorized from Paypal account.'
+        #         failure: 'Unable to authorize you from Paypal account.'
+        #
+        #       paypal_permissions_authable:
+        #         success: 'Successfully authorized from Paypal account'
+        #         failure: 'Unable to authorize you from Paypal account'
         #
         # But they can also be nested by Devise scope:
         #
         #   en:
         #     devise:
-        #       paypal_permissions_authable:
-        #         admin:
-        #           success: 'Hello admin! You're successfully authorized from Paypal'
         #       paypal_authable:
         #         admin:
-        #           sucess: 'Hello admin! You're successfully authorized from Paypal'
+        #           sucess: 'Hello admin! You're successfully authorized from Paypal account.'
+        #           failure: 'Sorry admin. Unalbe to authorize you from Paypal account.'
+        #       paypal_permissions_authable:
+        #         admin:
+        #           success: 'Hello admin! You're successfully authorized from Paypal account.'
+        #           failure: 'Sorry admin. Unable to authorize you from Paypal account.'
         #
         # If you customize your controllers by inheriting
         # Devise::PaypalPermissionsAuthable or Devise::PaypalAuthable
