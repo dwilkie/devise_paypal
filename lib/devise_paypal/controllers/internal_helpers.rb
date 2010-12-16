@@ -2,8 +2,12 @@ module DevisePaypal
   module Controllers
     module InternalHelpers
       private
-        def handle_callback_action(resource_params)
-          self.resource = resource_class.find_for_paypal_auth(resource_params)
+        def handle_callback_action(resource_params, request_params)
+          self.resource = resource_class.method(
+            :find_for_paypal_auth
+          ).arity == 1 ?
+            resource_class.find_for_paypal_auth(resource_params) :
+            resource_class.find_for_paypal_auth(resource_params, request_params)
           if resource.persisted? && resource.errors.empty?
             set_paypal_flash_message :notice, :success, :resource => resource
             sign_in_and_redirect resource_name, resource, :event => :authentication
