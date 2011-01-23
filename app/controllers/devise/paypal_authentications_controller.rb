@@ -13,7 +13,7 @@ class Devise::PaypalAuthenticationsController < ApplicationController
 
   # GET /resource/paypal_authentications/:id
   def show
-    @paypal_authentication = Devise::PaypalAuthentication.find_by_id(
+    @paypal_authentication = paypal_authentication_class.find_by_id(
       session[:paypal_authentication_id]
     )
     redirect_to @paypal_authentication ?
@@ -22,7 +22,7 @@ class Devise::PaypalAuthenticationsController < ApplicationController
 
   private
     def create_and_redirect_to_resource(params)
-      paypal_authentication = Devise::PaypalAuthentication.create!(
+      paypal_authentication = paypal_authentication_class.create!(
         :params => params
       )
       session[:paypal_authentication_id] = paypal_authentication.id

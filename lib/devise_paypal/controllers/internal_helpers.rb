@@ -2,6 +2,10 @@ module DevisePaypal
   module Controllers
     module InternalHelpers
       private
+        def paypal_authentication_class
+          resource_class.paypal_authentication_class.constantize
+        end
+
         def handle_callback_action(resource_params, request_params)
           self.resource = resource_class.method(
             :find_for_paypal_auth
