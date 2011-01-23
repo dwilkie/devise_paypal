@@ -1,0 +1,13 @@
+Finish new version of this gem
+Use ideas from Delayed::Job
+i.e. DevisePaypal::Authentication
+Add validation to this model i.e. uniqueness of token
+
+In the DevisePaypal::AuthenticationsController
+  create action
+    create a new Authentication
+    after create it will send it to Paypal to get a token
+  show action
+    find the Authentication by token or id
+    Logic goes in here
+
