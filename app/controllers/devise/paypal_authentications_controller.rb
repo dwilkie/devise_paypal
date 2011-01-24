@@ -16,8 +16,8 @@ class Devise::PaypalAuthenticationsController < ApplicationController
     @paypal_authentication = paypal_authentication_class.find_by_id(
       session[:paypal_authentication_id]
     )
-    redirect_to @paypal_authentication ?
-    @paypal_authentication.remote_authentication_url : :action => :new
+    url = @paypal_authentication.remote_url
+    redirect_to url if url
   end
 
   private
@@ -29,7 +29,7 @@ class Devise::PaypalAuthenticationsController < ApplicationController
       paypal_authentication.callback_url = paypal_authentication_url(
         resource_name, paypal_authentication
       )
-      paypal_authentication.get_authentication_token
+      paypal_authentication.get_authentication_token!
       redirect_to paypal_authentication_path(
         resource_name, paypal_authentication
       )

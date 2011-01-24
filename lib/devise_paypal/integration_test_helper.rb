@@ -20,18 +20,6 @@ module DevisePaypal
       end
     end
 
-    def setup_auth_flow_response(token = nil)
-      token ||= "HA-DJW3X5Y99KRR4"
-      body_template = "TIMESTAMP=2010%2d10%2d07T10%3a06%3a31Z&CORRELATIONID=5c533a2b40c6a&ACK=Success&VERSION=2%2e3&BUILD=1545724"
-      paypal_response = Rack::Utils.parse_nested_query(body_template)
-      paypal_response.merge!("TOKEN" => token)
-      paypal_response = Rack::Utils.build_nested_query(paypal_response)
-      {
-        :token => token,
-        :body => paypal_response
-      }
-    end
-
     def assert_equal_to_paypal_url(url, paypal_url)
       uri = URI.parse(url)
       uri.query = nil
