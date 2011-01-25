@@ -13,8 +13,20 @@ class Devise::PaypalAuthentication < ActiveRecord::Base
     )
   end
 
+  def get_authentication_details!
+
+  end
+
   def remote_url
     remote_authentication_url(token) if token.present?
+  end
+
+  def has_token_param?(query_params)
+    @token_param = get_token_from_query_params(query_params)
+  end
+
+  def token_param_valid?
+    @token_param == token
   end
 end
 
