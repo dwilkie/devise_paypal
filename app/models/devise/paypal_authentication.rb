@@ -5,7 +5,8 @@ class Devise::PaypalAuthentication < ActiveRecord::Base
   serialize :params
 
   validates :token,
-            :uniqueness => true
+            :uniqueness => true,
+            :allow_nil => true
 
   def get_authentication_token!(permissions = {})
     self.update_attributes!(

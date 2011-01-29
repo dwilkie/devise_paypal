@@ -22,6 +22,7 @@ class Devise::PaypalAuthenticationsController < ApplicationController
           if @paypal_authentication.token_param_valid?
             @paypal_authentication.get_authentication_details!
           else
+            @paypal_authentication.destroy
             url = new_paypal_authentication_path(resource_name)
           end
         else
@@ -29,6 +30,10 @@ class Devise::PaypalAuthenticationsController < ApplicationController
         end
       end
     else
+       set_flash_message(
+         :error,
+         :something_went_wrong_when_contacting_paypal
+       ) if session[:paypal_authentication_id]
       url = new_paypal_authentication_path(resource_name)
     end
     redirect_to url if url

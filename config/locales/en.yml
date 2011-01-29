@@ -1,6 +1,5 @@
 en:
   devise:
-    paypal_authable:
-      success: "Successfully authorized from Paypal account."
-      failure: "Unable to authorize you from Paypal account."
+    paypal_authentications:
+      something_went_wrong_when_contacting_paypal: "Sorry something went wrong when contacting Paypal. Please try again in a few minutes."
 
